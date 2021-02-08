@@ -29,272 +29,240 @@
     --scrollbar-thumb: #888;
     --scrollbar-thumb-hover: #555;
 }
-*{
-    font-family: Quicksand;
+
+* {
+    font-family: "Quicksand", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 /*Background colors*/
 
-.bg-red {
-    background-color: var(--lred);
-}
-
-.bg-orange {
-    background-color: var(--lorange);
-}
-
-.bg-yellow {
-    background-color: var(--lyellow);
-}
-
-.bg-lime {
-    background-color: var(--llime);
-}
-
-.bg-green {
-    background-color: var(--lgreen);
-}
-
-.bg-cyan {
-    background-color: var(--lcyan);
-}
-
-.bg-blue {
-    background-color: var(--lblue);
-}
-
-.bg-indigo {
-    background-color: var(--lindigo);
-}
-
-.bg-purple {
-    background-color: var(--lpurple);
-}
-
-.bg-pink {
-    background-color: var(--lpink);
-}
-
-.bg-grey {
-    background-color: var(--lgrey);
-}
+/* .bg-red {background-color: var(--lred);}
+.bg-orange {background-color: var(--lorange);}
+.bg-yellow {background-color: var(--lyellow);}
+.bg-lime {background-color: var(--llime);}
+.bg-green {background-color: var(--lgreen);}
+.bg-cyan {background-color: var(--lcyan);}
+.bg-blue {background-color: var(--lblue);}
+.bg-indigo {background-color: var(--lindigo);}
+.bg-purple {background-color: var(--lpurple);}
+.bg-pink {background-color: var(--lpink);}
+.bg-grey {background-color: var(--lgrey);} */
 
 /*global level style*/
 
 html {
     background-color: var(--dark-grey);
-    font-family: 'Quicksand', sans-serif;
     color: var(--lgrey);
-    padding: 0px;
     overflow-x: hidden;
     box-shadow: inset 0px 0px 100px var(--my-black);
+    height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+    height: 100%;
 }
 
-#about {
-    background-color: var(--dark-grey);
-    box-shadow: inset 0px 0px 100px var(--my-black);
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-}
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover);
-}
-
-.nav-bar {
+nav {
     display: flex;
+    padding: 10px;
     justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0px;
+    align-items: center;
+    font-size: 1.25rem;
 }
 
-.nav-bar-logo {
-    flex: 1;
-    margin-left: 20px;
-    margin-top: 20px;
-    align-self: flex-start;
-}
-
-.nav-bar-logo a {
+nav a {
     text-decoration: none;
-    color: var(--lblue);
+    color: var(--lgreen);
+}
+
+#logo {
     font-weight: bold;
-}
-
-.nav-bar-logo a:visited {
-    text-decoration: none;
-    color: var(--lblue);
-}
-
-.nav-bar-links {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.nav-bar-links ul {
-    list-style-type: none;
-}
-
-.nav-bar-links ul li {
     padding: 5px;
-}
-
-.nav-bar-links ul li a {
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    color: var(--lblue);
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.notes-main {
-    width: 100%;
-}
-
-.main-projects-container, .main-notes-container {
-    width: 80%;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#hamburger {
-    margin: 20px;
-    transition: all 0.2s ease;
-}
-
-.welcoming-message .word {
-    transition: all 0.2s ease-in;
-}
-
-/* For Mobile */
-
-@media screen and (max-width: 400px) {
-    .nav-bar-links ul li {
-        display: block;
-    }
-    .nav-bar-links ul li a {
-        background-color: var(--lblue);
-        color: var(--my-black);
-    }
-    #hamburger {
-        display: block;
-    }
-    .invisible {
-        display: none;
-    }
-    .fade50 {
-        opacity: 0.5;
-    }
-    .welcoming-title {
-        font-size: 28px;
-    }
-    .welcoming-message {
-        font-size: 16px;
-    }
-    .card {
-        width: 90%;
-    }
-    #linqet {
-        top: 50px;
-    }
-}
-
-/* For Tablets */
-
-@media screen and (min-width: 400px) and (max-width: 680px) {
-    .nav-bar-links ul li {
-        display: block;
-    }
-    .nav-bar-links ul li a {
-        background-color: var(--lblue);
-        color: var(--my-black);
-    }
-    #hamburger {
-        display: block;
-    }
-    .invisible {
-        display: none;
-    }
-    .fade50 {
-        opacity: 0.5;
-    }
-    .welcoming-title {
-        font-size: 40px;
-    }
-    .welcoming-message {
-        font-size: 28px;
-    }
-    .main-projects-container {
-        width: 90%;
-    }
-    .card {
-        width: 90%;
-    }
-    #linqet {
-        top: 50px;
-    }
-}
-
-/* For pc */
-
-@media screen and (min-width: 680px) {
-    .nav-bar-links ul li {
-        display: inline;
-    }
-    #hamburger {
-        display: none;
-    }
-    .welcoming-title {
-        font-size: 52px;
-    }
-    .welcoming-message {
-        font-size: 40px;
-    }
-}
-
-#menu {
     cursor: pointer;
-    width: 32px;
 }
 
-#linqet {
-    margin-right: 20px;
-    align-items: flex-start;
-    text-align: right;
-    position: absolute;
-    z-index: 3;
-    transition: all 0.2s ease;
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+button {
+    padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    background-color: var(--lgreen);
+    color: var(--my-black);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+}
+
+#asociacioni {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+}
+
+#kolonat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    flex: 5;
+}
+
+#perfundimtarja {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    flex: 1;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    background-color: var(--lgreen);
+}
+
+.kolona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+#a {
+    grid-column: 1/2;
+}
+
+#b {
+    grid-column: 2/3;
+}
+
+#c {
+    grid-column: 3/4;
+}
+
+#d {
+    grid-column: 4/5;
+}
+
+.fjalet {
+    flex: 4;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.zgjidhja {
+    width: 100%;
+    flex: 1;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    padding: 0;
+    display: flex;
+    background-color: var(--lindigo);
+}
+
+.fjala {
+    width: 100%;
+    flex: 1;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    background-color: var(--lgreen);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--lgreen);
+    cursor: pointer;
+}
+
+.fjala+.fjala {
+    margin-top: 5px;
+}
+
+.fjala .teksti {
+    color: var(--my-black);
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+}
+
+.fjala .mbuloja {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-grey);
+    left: 0;
+}
+
+.fjala:hover .mbuloja {
+    left: 10px;
+}
+
+.zgjidhja input[type=text], #perfundimtarja input[type=text] {
+    outline: none;
+    flex: 6;
+    height: 100%;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.zgjidhja button {
+    flex: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--lindigo);
+    height: 100%;
+}
+
+.zgjidhja button:hover {
+    background-color: rgba(115, 80, 135, 0.5);
+}
+
+#perfundimtarja button {
+    flex: 1;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--lgreen);
+    height: 100%;
+}
+
+#perfundimtarja button:hover {
+    background-color: rgba(98, 173, 114, 0.562);
+}
+
+.mbuloja:nth-of-type(even) {
+    transition: left 0.5s ease-in-out;
+    transition-delay: 0.25s;
+}
+
+.mbuloja:nth-of-type(odd) {
+    transition: left 0.5s ease-in-out;
+}
+
+.out-of-bounds {
+    left: 100% !important;
 }

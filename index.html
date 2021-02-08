@@ -6,18 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asociacionet</title>
     <link rel="stylesheet" href="./style/style.css">
-    <script defer src="./app/account.js"></script>
-    <script defer src="./app/app.js"></script>
+    <script type="module" src="./app/asociacionet.js"></script>
+    <script defer type="module" src="./app/app.js"></script>
 </head>
 <body>
     <nav>
         <span id="logo"><a href="https://www.ndriqa.com">ndriqa</a></span>
         <div id="links">
             <ul>
-                <li><a href="mailto::ndricimrrahmani@gmail.com">contact me</a></li>
+                <li><button id="lojeere">Loje e re</button></li>
+                <li><button id="dorezohem">Dorezohem</button></li>
+                <li><button id="hapifjalet">Hapi fjalet</button></li>
             </ul>
         </div>
     </nav>
-    <main></main>
+    <main>
+        <div id="asociacioni">
+            <div id="kolonat">
+                <div id="a" class="kolona">
+                    <div class="fjalet">
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                    </div>
+                    <div class="zgjidhja">
+                        <input type="text" maxlength="20">
+                        <button onclick="check(0)">?</button>
+                    </div>
+                </div>
+                <div id="b" class="kolona">
+                    <div class="fjalet">
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                    </div>
+                    <div class="zgjidhja">
+                        <input type="text" maxlength="20">
+                        <button onclick="check(1)">?</button>
+                    </div>
+                </div>
+                <div id="c" class="kolona">
+                    <div class="fjalet">
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                    </div>
+                    <div class="zgjidhja">
+                        <input type="text" maxlength="20">
+                        <button onclick="check(2)">?</button>
+                    </div>
+                </div>
+                <div id="d" class="kolona">
+                    <div class="fjalet">
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                        <div class="fjala">
+                            <p class="teksti"></p>
+                            <div class="mbuloja"></div>
+                        </div>
+                    </div>
+                    <div class="zgjidhja">
+                        <input type="text" maxlength="20">
+                        <button onclick="check(3)">?</button>
+                    </div>
+                </div>
+            </div>
+            <div id="perfundimtarja">
+                <input type="text" maxlength="30">
+                <button onclick="perfundimtare()">?</button>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
