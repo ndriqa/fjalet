@@ -123,7 +123,22 @@ main{
     margin: auto;
     z-index: 2;
 }
-
+#fituesi{
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#tekstiFitues{
+    word-wrap: break-word;
+}
 #asociacioni {
     display: flex;
     flex-direction: column;
@@ -276,7 +291,9 @@ main{
 .zgjidhja button:hover {
     background-color: rgba(115, 80, 135, 0.5);
 }
-
+#perfundimtarja input {
+    font-size: 1.5rem;
+}
 #perfundimtarja button {
     flex: 1;
     border-radius: 10px;
@@ -343,12 +360,12 @@ main{
 
 .guessed{
     background-color: var(--lgreen);
-    box-shadow: inset 0 0 3 var(--dgreen);
 }
 .guessed input{
     color: var(--dgreen);
     text-shadow: 1px 1px 1px var(--my-black);
     text-align: center;
+    pointer-events: none;
 }
 .wrong{
     animation: shake 0.3s;

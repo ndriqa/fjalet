@@ -5,9 +5,10 @@ const pikeKolone = 20;
 const pikePerfundimtareje = 50;
 
 let piketMomentale = 0;
+let won = false;
 
-const asociacionID = Math.floor(Math.random() * ass.length);
-const asociacioni = ass[asociacionID];
+let asociacionID = Math.floor(Math.random() * ass.length);
+let asociacioni = ass[asociacionID];
 
 document.querySelector("#lojeere").onclick = lojeere;
 document.querySelector("#dorezohem").onclick = dorezohem;
@@ -15,24 +16,31 @@ document.querySelector("#hapifjalet").onclick = hapifjalet;
 
 let checkers = document.querySelectorAll(".zgjidhja button");
 let texts = document.querySelectorAll(".zgjidhja input");
+
 for (let i = 0; i < 4; i++) {
     checkers[i].onclick = check;
     texts[i].onfocus = removeShake;
 }
 
-let fjalet = [document.querySelectorAll("#a .fjala"),
-document.querySelectorAll("#b .fjala"),
-document.querySelectorAll("#c .fjala"),
-document.querySelectorAll("#d .fjala"),]
+let fjalet = [
+    document.querySelectorAll("#a .fjala"),
+    document.querySelectorAll("#b .fjala"),
+    document.querySelectorAll("#c .fjala"),
+    document.querySelectorAll("#d .fjala"),]
 
-for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-        let ll = String.fromCharCode(`${97 + i}`); //little letter
-        fjalet[i][j].querySelector("p").innerText = asociacioni[`${ll + (j + 1)}`];
-        fjalet[i][j].onclick = hapeFjalen;
-    }
+function initializeWords(){
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            let ll = String.fromCharCode(`${97 + i}`); //little letter
+            fjalet[i][j].querySelector("p").innerText = asociacioni[`${ll + (j + 1)}`];
+            fjalet[i][j].onclick = hapeFjalen;
+        }
+    }    
 }
+initializeWords();
+
 document.querySelector("#perfundimtarja button").onclick = perfundimtarja;
+
 function check(event) {
     let answer = "";
     let s = event.target.dataset.num;
@@ -52,11 +60,13 @@ function check(event) {
         default:
             break;
     }
-    console.log(answer, asociacioni.a, s);
     if (answer != "") {
         if (answer === asociacioni[s]) {
             document.querySelector(`#${s} .zgjidhja`).classList.add("guessed");
             document.querySelector(`#${s} button`).style.display = "none";
+            let teHapura = document.querySelectorAll(`#${s} .out-of-bounds`).length;
+            piketMomentale += (pikeKolone + (pikeFjale*(4-teHapura)));
+            updateScore();
         } else {
             document.querySelector(`#${s} .zgjidhja`).classList.add("wrong");
         }
@@ -73,10 +83,25 @@ function perfundimtarja() {
     if (pergj === asociacioni.perfundimtarja) {
         document.querySelector(`#perfundimtarja`).classList.add("guessed");
         document.querySelector(`#perfundimtarja button`).style.display = "none";
+        let kolonaPaHapur = 4 - document.querySelectorAll(".kolonat guessed").length;
+        piketMomentale += (pikePerfundimtareje + (pikeKolone * kolonaPaHapur));
+        won = true;
+        updateScore();
+        updateView();
     } else {
         document.querySelector(`#perfundimtarja`).classList.add("wrong");
     }
 
+}
+function showButtons(){
+    document.querySelectorAll(".zgjidhja button").forEach(function(element){
+        element.style.display = "block";
+        element.parentElement.classList.remove("guessed");
+        element.parentElement.querySelector("input").value = "";
+    });
+    let butoni = document.querySelector("#perfundimtarja button")
+    butoni.style.display = "block";
+    butoni.parentElement.querySelector("input").value = "";
 }
 function hapifjalet() {
     document.querySelectorAll(".mbuloja").forEach(function (element) {
@@ -85,12 +110,48 @@ function hapifjalet() {
 }
 function dorezohem() {
 
+
 }
 function lojeere() {
     document.querySelectorAll(".mbuloja").forEach(function (element) {
         element.classList.remove("out-of-bounds")
-    })
+    });
+    won = false;
+    piketMomentale = 0;
+    asociacionID = Math.floor(Math.random() * ass.length);
+    asociacioni = ass[asociacionID];
+    initializeWords();
+    showButtons();
+    updateScore();
+    updateView();
 }
-function removeShake(event){
+function removeShake(event) {
     event.target.parentElement.classList.remove("wrong");
+}
+function updateScore(){
+    let emri = document.querySelector("#emri").value;
+    console.log(emri);
+    document.querySelector("#piket").innerText = `${piketMomentale}`;
+    document.querySelector("#tekstiFitues").innerText = `Shume urime, ${emri}!`;
+    document.querySelector("#piketFituese").innerText = `${piketMomentale} pike`;
+}
+function updateView(){
+    let info = document.querySelector("#info");
+    let loja = document.querySelector("#asociacioni");
+    let fituesi = document.querySelector("#fituesi");
+    if(won){
+        info.style.transition = ""
+        loja.style.transition = ""
+        fituesi.style.transition = "opacity 0.3s ease-in"
+        info.style.opacity = 0;
+        loja.style.opacity = 0;
+        fituesi.style.opacity = 1;
+    } else {
+        info.style.transition = "opacity 0.3s ease-in"
+        loja.style.transition = "opacity 0.3s ease-in"
+        fituesi.style.transition = ""
+        info.style.opacity = 1;
+        loja.style.opacity = 1;
+        fituesi.style.opacity = 0;
+    }
 }
