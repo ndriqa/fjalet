@@ -16,6 +16,7 @@
         <span id="logo"><a href="https://www.ndriqa.com">ndriqa</a></span>
         <div id="links">
             <ul>
+                <li><button id="ndihme">Si luhet loja?</button></li>
                 <li><button id="lojeere">Loje e re</button></li>
                 <li><button id="dorezohem">Dorezohem</button></li>
                 <li><button id="hapifjalet">Hapi fjalet</button></li>
@@ -23,109 +24,123 @@
         </div>
     </nav>
     <main>
-        <div id="asociacioni">
-            <div id="kolonat">
-                <div id="a" class="kolona">
-                    <div class="fjalet">
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>A1</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>A2</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>A3</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>A4</a></div>
-                        </div>
-                    </div>
-                    <div class="zgjidhja">
-                        <input id="zgjidhjaA" type="text" maxlength="20">
-                        <button data-num="0">?</button>
-                    </div>
+        <div id="main-container">
+            <div id="info">
+                <div id="assInfo">
+                    <p>Asociacioni: </p>
+                    <p id="AID">0</p>
                 </div>
-                <div id="b" class="kolona">
-                    <div class="fjalet">
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>B1</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>B2</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>B3</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>B4</a></div>
-                        </div>
-                    </div>
-                    <div class="zgjidhja">
-                        <input id="zgjidhjaB" type="text" maxlength="20">
-                        <button data-num="1">?</button>
-                    </div>
-                </div>
-                <div id="c" class="kolona">
-                    <div class="fjalet">
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>C1</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>C2</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>C3</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>C4</a></div>
-                        </div>
-                    </div>
-                    <div class="zgjidhja">
-                        <input id="zgjidhjaC" type="text" maxlength="20">
-                        <button data-num="2">?</button>
-                    </div>
-                </div>
-                <div id="d" class="kolona">
-                    <div class="fjalet">
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>D1</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>D2</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>D3</a></div>
-                        </div>
-                        <div class="fjala">
-                            <p class="teksti"></p>
-                            <div class="mbuloja"><a>D4</a></div>
-                        </div>
-                    </div>
-                    <div class="zgjidhja">
-                        <input id="zgjidhjaD" type="text" maxlength="20">
-                        <button data-num="3">?</button>
-                    </div>
+                <div id="userInfo">
+                    <input type="text" placeholder="Emri" id="emri">
+                    <p id="piket">0</p>
+                    <p>pike</p>
                 </div>
             </div>
-            <div id="perfundimtarja">
-                <input type="text" maxlength="30">
-                <button onclick="perfundimtare()">?</button>
+            <div id="asociacioni">
+                <div id="kolonat">
+                    <div id="a" class="kolona">
+                        <div class="fjalet">
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>A1</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>A2</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>A3</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>A4</a></div>
+                            </div>
+                        </div>
+                        <div class="zgjidhja">
+                            <input id="zgjidhjaA" type="text" maxlength="20">
+                            <button data-num="a">?</button>
+                        </div>
+                    </div>
+                    <div id="b" class="kolona">
+                        <div class="fjalet">
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>B1</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>B2</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>B3</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>B4</a></div>
+                            </div>
+                        </div>
+                        <div class="zgjidhja">
+                            <input id="zgjidhjaB" type="text" maxlength="20">
+                            <button data-num="b">?</button>
+                        </div>
+                    </div>
+                    <div id="c" class="kolona">
+                        <div class="fjalet">
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>C1</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>C2</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>C3</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>C4</a></div>
+                            </div>
+                        </div>
+                        <div class="zgjidhja">
+                            <input id="zgjidhjaC" type="text" maxlength="20">
+                            <button data-num="c">?</button>
+                        </div>
+                    </div>
+                    <div id="d" class="kolona">
+                        <div class="fjalet">
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>D1</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>D2</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>D3</a></div>
+                            </div>
+                            <div class="fjala">
+                                <p class="teksti"></p>
+                                <div class="mbuloja"><a>D4</a></div>
+                            </div>
+                        </div>
+                        <div class="zgjidhja">
+                            <input id="zgjidhjaD" type="text" maxlength="20">
+                            <button data-num="d">?</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="perfundimtarja">
+                    <input type="text" maxlength="30">
+                    <button>?</button>
+                </div>
             </div>
+    
         </div>
     </main>
 </body>
