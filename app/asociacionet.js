@@ -1,5 +1,6 @@
 export default [
     {
+        id: '00000006',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
@@ -22,6 +23,7 @@ export default [
         d3: 'vakum',
         d4: 'foton',
     },{
+        id: '00000005',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
@@ -44,6 +46,7 @@ export default [
         d3: 'vakum',
         d4: 'foton',
     },{
+        id: '00000004',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
@@ -66,6 +69,7 @@ export default [
         d3: 'vakum',
         d4: 'foton',
     },{
+        id: '00000003',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
@@ -88,6 +92,7 @@ export default [
         d3: 'vakum',
         d4: 'foton',
     },{
+        id: '00000002',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
@@ -110,6 +115,7 @@ export default [
         d3: 'vakum',
         d4: 'foton',
     },{
+        id: '00000001',
         perfundimtarja: 'dielli',
         a: 'yll',
         a1: 'hapesire',
