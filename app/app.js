@@ -12,7 +12,9 @@ let asociacioni = ass[asociacionID];
 
 document.querySelector("#lojeere").onclick = lojeere;
 document.querySelector("#dorezohem").onclick = dorezohem;
-document.querySelector("#hapifjalet").onclick = hapifjalet;
+document.querySelector("#ndihme").onclick = ndihmo;
+document.querySelector("#perfundimtarja button").onclick = perfundimtarja;
+
 
 let checkers = document.querySelectorAll(".zgjidhja button");
 let texts = document.querySelectorAll(".zgjidhja input");
@@ -38,8 +40,6 @@ function initializeWords(){
     }    
 }
 initializeWords();
-
-document.querySelector("#perfundimtarja button").onclick = perfundimtarja;
 
 function check(event) {
     let answer = "";
@@ -101,16 +101,46 @@ function showButtons(){
     });
     let butoni = document.querySelector("#perfundimtarja button")
     butoni.style.display = "block";
+    butoni.parentElement.classList.remove("guessed");
     butoni.parentElement.querySelector("input").value = "";
 }
 function hapifjalet() {
+    let counter = 1;
     document.querySelectorAll(".mbuloja").forEach(function (element) {
-        element.classList.add("out-of-bounds")
+        if(counter === 1){
+            element.classList.add("first-tempo");
+            counter = 2;
+        } else {
+            element.classList.add("second-tempo");
+            counter = 1;
+        }
+        element.classList.add("out-of-bounds");
     });
 }
 function dorezohem() {
+    hapifjalet();
+    let tempa = document.querySelector("#zgjidhjaA");
+    let tempb = document.querySelector("#zgjidhjaB");
+    let tempc = document.querySelector("#zgjidhjaC");
+    let tempd = document.querySelector("#zgjidhjaD");
+    let perfu = document.querySelector("#perfundimtarja input");
 
+    tempa.value = asociacioni.a;
+    tempb.value = asociacioni.b;
+    tempc.value = asociacioni.c;
+    tempd.value = asociacioni.d;
+    perfu.value = asociacioni.perfundimtarja;
 
+    tempa.parentElement.classList.add("guessed");
+    tempb.parentElement.classList.add("guessed");
+    tempc.parentElement.classList.add("guessed");
+    tempd.parentElement.classList.add("guessed");
+    perfu.parentElement.classList.add("guessed");
+
+    document.querySelectorAll(".zgjidhja button").forEach(function(element){
+        element.style.display = "none";
+    })
+    perfu.parentElement.querySelector("button").style.display = "none";
 }
 function lojeere() {
     document.querySelectorAll(".mbuloja").forEach(function (element) {
@@ -154,4 +184,9 @@ function updateView(){
         loja.style.opacity = 1;
         fituesi.style.opacity = 0;
     }
+}
+
+function ndihmo(){
+    let ndihma = document.querySelector("#ndihma");
+    ndihma.classList.toggle("hape");
 }
