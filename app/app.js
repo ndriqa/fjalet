@@ -19,6 +19,8 @@ document.querySelector("#perfundimtarja button").onclick = perfundimtarja;
 let checkers = document.querySelectorAll(".zgjidhja button");
 let texts = document.querySelectorAll(".zgjidhja input");
 
+var counter = 1;
+
 for (let i = 0; i < 4; i++) {
     checkers[i].onclick = check;
     texts[i].onfocus = removeShake;
@@ -74,6 +76,13 @@ function check(event) {
 }
 function hapeFjalen(event) {
     if (event.target.classList.contains("mbuloja")) {
+        if(counter === 1){
+            event.target.classList.add("first-tempo");
+            counter = 2;
+        } else {
+            event.target.classList.add("second-tempo");
+            counter = 1;
+        }
         event.target.classList.toggle("out-of-bounds");
     }
 }
@@ -105,7 +114,6 @@ function showButtons(){
     butoni.parentElement.querySelector("input").value = "";
 }
 function hapifjalet() {
-    let counter = 1;
     document.querySelectorAll(".mbuloja").forEach(function (element) {
         if(counter === 1){
             element.classList.add("first-tempo");
