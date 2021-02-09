@@ -202,9 +202,15 @@ main {
 }
 
 .fjala .teksti {
+    position: absolute;
     color: var(--my-black);
     font-family: Quicksand, sans-serif;
     font-weight: bold;
+    height: 100%;
+    text-align: center;
+    line-height: 2;
+    width: 100%;
+    z-index: 3;
 }
 
 .fjala .mbuloja {
@@ -213,10 +219,22 @@ main {
     height: 100%;
     background-color: var(--dark-grey);
     left: 0;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    z-index: 5;
+}
+.mbuloja a {
+    text-decoration: none;
+    color: var(--lgreen);
+    font-weight: bold;
+    font-size: 0.75rem;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
 }
 
 .fjala:hover .mbuloja {
-    left: 10px;
+    left: 5%;
 }
 
 .zgjidhja input[type=text], #perfundimtarja input[type=text] {
@@ -264,5 +282,5 @@ main {
 }
 
 .out-of-bounds {
-    left: 100% !important;
+    left: 95% !important;
 }
