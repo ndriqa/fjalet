@@ -4,6 +4,8 @@ const pikeFjale = 10;
 const pikeKolone = 20;
 const pikePerfundimtareje = 50;
 
+updateName();
+
 let piketMomentale = 0;
 let won = false;
 
@@ -73,6 +75,7 @@ function check(event) {
             document.querySelector(`#${s} .zgjidhja`).classList.add("wrong");
         }
     }
+    updateName();
 }
 function hapeFjalen(event) {
     if (event.target.classList.contains("mbuloja")) {
@@ -88,7 +91,6 @@ function hapeFjalen(event) {
 }
 function perfundimtarja() {
     let pergj = document.querySelector("#perfundimtarja input").value;
-    console.log(pergj);
     if (pergj === asociacioni.perfundimtarja) {
         document.querySelector(`#perfundimtarja`).classList.add("guessed");
         document.querySelector(`#perfundimtarja button`).style.display = "none";
@@ -168,7 +170,7 @@ function removeShake(event) {
 }
 function updateScore(){
     let emri = document.querySelector("#emri").value;
-    console.log(emri);
+    localStorage.setItem("emri", emri);
     document.querySelector("#piket").innerText = `${piketMomentale}`;
     document.querySelector("#tekstiFitues").innerText = `Shume urime, ${emri}!`;
     document.querySelector("#piketFituese").innerText = `${piketMomentale} pike`;
@@ -197,4 +199,11 @@ function updateView(){
 function ndihmo(){
     let ndihma = document.querySelector("#ndihma");
     ndihma.classList.toggle("hape");
+}
+function updateName(){
+    if(localStorage && localStorage.getItem("emri") !== ""){
+        document.querySelector("#emri").value = localStorage.getItem("emri");
+    } else {
+        localStorage.setItem("emri", document.querySelector("#emri").value);
+    }    
 }
