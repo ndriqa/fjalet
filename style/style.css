@@ -274,6 +274,7 @@ main {
 
 .fjala:hover .mbuloja {
     left: 5%;
+    transition: left 0.2s ease;
 }
 
 .zgjidhja input[type=text], #perfundimtarja input[type=text] {
